@@ -19,7 +19,7 @@ export class UsersController {
 
     @Post()
     createUser(@Body() payload: CreateUserDto){
-        return this.usersService.createUser(payload);
+        return this.usersService.create(payload);
     }
 
     @Put(':userId')

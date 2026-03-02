@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
-import { IsString, IsNotEmpty } from "class-validator";
+import { IsString, IsNotEmpty, IsArray, ArrayNotEmpty, IsInt } from "class-validator";
 import { PartialType, ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
 
-export class CreateUserDto {   
+export class CreateUserDto {
     @IsString()
     @IsNotEmpty()
     @ApiProperty()
@@ -33,5 +33,12 @@ export class CreateUserDto {
     @IsNotEmpty()
     @ApiProperty()
     readonly miTest2: string;
+
+    @IsArray()
+    @ArrayNotEmpty()
+    @IsInt({ each: true })
+    @Type(() => Number)
+    @ApiProperty({ type: [Number] })
+    readonly roleIds: number[];
 }
-export class UpdateUserDto extends PartialType(CreateUserDto){}
+export class UpdateUserDto extends PartialType(CreateUserDto) { }
