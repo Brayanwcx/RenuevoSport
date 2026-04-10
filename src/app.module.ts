@@ -8,9 +8,15 @@ import * as Joi from 'joi';
 import { enviroments } from './enviroments';
 import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
-import { PermissionsModule } from './permissions/permissions.module';
 import { AuthModule } from './auth/auth.module';
 import { ModulesModule } from './modules/modules.module';
+import { CategoriesModule } from './categories/categories.module';
+import { BrandsModule } from './brands/brands.module';
+import { ProductsModule } from './products/products.module';
+import { InvoicesModule } from './invoices/invoices.module';
+import { CashRegisterModule } from './cash-register/cash-register.module';
+import { InventoryMovementsModule } from './inventory-movements/inventory-movements.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import config from './config';
 
 @Module({
@@ -33,8 +39,14 @@ import config from './config';
     AuthModule,
     UsersModule,
     RolesModule,
-    PermissionsModule,
     ModulesModule,
+    CategoriesModule,
+    BrandsModule,
+    ProductsModule,
+    InvoicesModule,
+    CashRegisterModule,
+    InventoryMovementsModule,
+    DashboardModule,
   ],
   controllers: [AppController],
   providers: [AppService],

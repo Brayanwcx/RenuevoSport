@@ -17,7 +17,7 @@ import config from '../config';
                     username: user,
                     password,
                     database: name,
-                    synchronize: false,
+                    synchronize: true, // TODO: cambiar a false cuando uses migraciones
                     autoLoadEntities: true,
                 };
             },
